@@ -1,0 +1,17 @@
+package ch.wicki.schatzkarte;
+
+import org.osmdroid.ResourceProxy;
+import org.osmdroid.views.overlay.ItemizedOverlay;
+import org.osmdroid.views.overlay.OverlayItem;
+
+import android.graphics.drawable.Drawable;
+
+public class MyItemizedOverlay extends ItemizedOverlay<OverlayItem> {
+
+	public MyItemizedOverlay(Drawable pDefaultMarker,
+			ResourceProxy pResourceProxy) {
+		super(pDefaultMarker, pResourceProxy);
+		// TODO Auto-generated constructor stub
+	}
+
+}

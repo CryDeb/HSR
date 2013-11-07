@@ -2,8 +2,8 @@ package ch.wicki.schatzkarte;
 
 import java.io.File;
 
+import org.osmdroid.DefaultResourceProxyImpl;
 import org.osmdroid.ResourceProxy;
-import org.osmdroid.api.IGeoPoint;
 import org.osmdroid.api.IMapController;
 import org.osmdroid.tileprovider.MapTileProviderArray;
 import org.osmdroid.tileprovider.MapTileProviderBase;
@@ -14,6 +14,7 @@ import org.osmdroid.tileprovider.modules.MapTileModuleProviderBase;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.tileprovider.tilesource.XYTileSource;
 import org.osmdroid.tileprovider.util.SimpleRegisterReceiver;
+import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.overlay.TilesOverlay;
 
 import android.app.Activity;
@@ -21,6 +22,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -32,6 +34,7 @@ public class SKActivity extends Activity implements LocationListener {
 	private org.osmdroid.views.MapView map;
 	private IMapController controller;
 	private LocationManager locationManager;
+	private MyItemizedOverlay myItemizedOverlay = null;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +47,7 @@ public class SKActivity extends Activity implements LocationListener {
 			map.setMultiTouchControls(true);
 			map.setBuiltInZoomControls(true);
 			controller = map.getController();
-			controller.setZoom(18);
+			controller.setZoom(5);
 			XYTileSource treasureMapTileSource = new XYTileSource("mbtiles", ResourceProxy.string.offline_mode, 1, 20, 256, ".png", "http://example.org/");
 			File file = new File(Environment.getExternalStorageDirectory(), "hsr.mbtiles");
 			MapTileModuleProviderBase treasureMapModuleProvider = new MapTileFileArchiveProvider(new SimpleRegisterReceiver(this),
@@ -54,8 +57,18 @@ public class SKActivity extends Activity implements LocationListener {
 			TilesOverlay treasureMapTilesOverlay = new TilesOverlay(treasureMapProvider, getBaseContext());
 			treasureMapTilesOverlay.setLoadingBackgroundColor(Color.TRANSPARENT);
 			map.getOverlays().add(treasureMapTilesOverlay);
+	     	Drawable marker=getResources().getDrawable(android.R.drawable.star_big_on);
+	        int markerWidth = marker.getIntrinsicWidth();
+	        int markerHeight = marker.getIntrinsicHeight();
+	        marker.setBounds(0, markerHeight, markerWidth, 0);
+	         
+	        ResourceProxy resourceProxy = new DefaultResourceProxyImpl(getApplicationContext());
+	         
+	        myItemizedOverlay = new MyItemizedOverlay(marker, resourceProxy);
+	        map.getOverlays().add(myItemizedOverlay);
 	        
-	        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 60000, 0, this);
+	        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
+	        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, this);
         }else{
         	AlertDialog.Builder builder = new AlertDialog.Builder(this);
         	builder.setMessage("There Is no GPS Sender active, Please activate it");
@@ -88,8 +101,9 @@ public class SKActivity extends Activity implements LocationListener {
 
 	@Override
 	public void onLocationChanged(Location pGeoLocation) {
-		IGeoPoint iPoint;
-		controller.setCenter((IGeoPoint) pGeoLocation);
+		GeoPoint overlocGeoPoint = new GeoPoint(pGeoLocation.getLatitude(), pGeoLocation.getLongitude());
+		controller.setCenter(overlocGeoPoint);
+		myItemizedOverlay.addItem(overlocGeoPoint, "onLocationChanged", "onLocationChanged");
 	}
 
 	@Override

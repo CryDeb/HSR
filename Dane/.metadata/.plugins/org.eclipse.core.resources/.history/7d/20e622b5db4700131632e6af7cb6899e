@@ -1,0 +1,8 @@
+package ch.wicki.schatzkarte;
+
+import org.osmdroid.views.overlay.ItemizedOverlay;
+import org.osmdroid.views.overlay.OverlayItem;
+
+public class MyItemizedOverlay extends ItemizedOverlay<OverlayItem> {
+
+}

@@ -1,0 +1,16 @@
+package ch.wicki.schatzkarte;
+
+import java.util.ArrayList;
+
+import org.osmdroid.ResourceProxy;
+import org.osmdroid.api.IMapView;
+import org.osmdroid.views.overlay.ItemizedOverlay;
+import org.osmdroid.views.overlay.OverlayItem;
+
+import android.graphics.Point;
+import android.graphics.drawable.Drawable;
+
+public class MyItemizedOverlay extends ItemizedOverlay<OverlayItem> {
+	private ArrayList<OverlayItem> overlayItemList = new ArrayList<OverlayItem>();
+
+}

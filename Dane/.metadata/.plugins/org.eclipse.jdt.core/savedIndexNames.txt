@@ -1,10 +1,11 @@
 INDEX VERSION 1.126+/home/crydeb/Documents/HSR/HSR/Dane/.metadata/.plugins/org.eclipse.jdt.core
 2212446646.index
-2131933815.index
+2758947078.index
+3745282943.index
 44737274.index
 366289137.index
-1841262553.index
-3474889879.index
+2131933815.index
 2939808340.index
-2758947078.index
+1841262553.index
 82300180.index
+3474889879.index
