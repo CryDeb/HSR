@@ -1,0 +1,105 @@
+package ch.wicki.schatzkarte;
+
+import java.io.File;
+
+import org.osmdroid.ResourceProxy;
+import org.osmdroid.api.IMapController;
+import org.osmdroid.tileprovider.MapTileProviderArray;
+import org.osmdroid.tileprovider.MapTileProviderBase;
+import org.osmdroid.tileprovider.modules.IArchiveFile;
+import org.osmdroid.tileprovider.modules.MBTilesFileArchive;
+import org.osmdroid.tileprovider.modules.MapTileFileArchiveProvider;
+import org.osmdroid.tileprovider.modules.MapTileModuleProviderBase;
+import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
+import org.osmdroid.tileprovider.tilesource.XYTileSource;
+import org.osmdroid.tileprovider.util.SimpleRegisterReceiver;
+import org.osmdroid.util.GeoPoint;
+import org.osmdroid.views.overlay.TilesOverlay;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.graphics.Color;
+import android.location.LocationManager;
+import android.os.Bundle;
+import android.os.Environment;
+import android.view.Menu;
+
+public class SKActivity extends Activity {
+	org.osmdroid.views.MapView map;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		LocationManager locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+		if(locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
+			setContentView(R.layout.activity_sk);
+			
+			map = (org.osmdroid.views.MapView) findViewById(R.id.MapShower);
+			map.setTileSource(TileSourceFactory.MAPQUESTOSM);
+			map.setMultiTouchControls(true);
+			map.setBuiltInZoomControls(true);
+			IMapController controller = map.getController();
+			controller.setZoom(18);
+			XYTileSource treasureMapTileSource = new XYTileSource("mbtiles", ResourceProxy.string.offline_mode, 1, 20, 256, ".png", "http://example.org/");
+			 
+			File file = new File(Environment.getExternalStorageDirectory() /* entspricht /sdcard/ */, "hsr.mbtiles");
+			 
+			/* Das verwenden von mbtiles ist leider ein wenig aufwändig, wir müssen
+			* unsere XYTileSource in verschiedene Klassen 'verpacken' um sie dann
+			* als TilesOverlay über der Grundkarte anzuzeigen.
+			*/
+			MapTileModuleProviderBase treasureMapModuleProvider = new MapTileFileArchiveProvider(new SimpleRegisterReceiver(this),
+			treasureMapTileSource, new IArchiveFile[] { MBTilesFileArchive.getDatabaseFileArchive(file) });
+			 
+			MapTileProviderBase treasureMapProvider = new MapTileProviderArray(treasureMapTileSource, null,
+			new MapTileModuleProviderBase[] { treasureMapModuleProvider });
+			 
+			TilesOverlay treasureMapTilesOverlay = new TilesOverlay(treasureMapProvider, getBaseContext());
+			treasureMapTilesOverlay.setLoadingBackgroundColor(Color.TRANSPARENT);
+			 
+			// Jetzt können wir den Overlay zu unserer Karte hinzufügen:
+			map.getOverlays().add(treasureMapTilesOverlay);
+	        GeoPoint point2 = new GeoPoint(51496994, -134733);
+	        controller.setCenter(point2);
+        }else{
+        	AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        	builder.setMessage("There Is no GPS Sender active, Please activate it");
+        	builder.setPositiveButton("OK", new DialogInterface.OnClickListener(){
+        		public void onClick(DialogInterface dialog, int id){
+        			dialog.dismiss();
+        			finish();
+        		}
+        	}{
+				
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					// TODO Auto-generated method stub
+					
+				}
+			}; {
+				
+				@Override
+				public void dismiss() {
+					// TODO Auto-generated method stub
+					
+				}
+				
+				@Override
+				public void cancel() {
+					// TODO Auto-generated method stub
+					
+				}
+			})
+        }
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.sk, menu);
+		
+		return true;
+	}
+}
