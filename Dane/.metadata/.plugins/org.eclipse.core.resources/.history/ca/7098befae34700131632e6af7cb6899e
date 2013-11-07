@@ -29,14 +29,12 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.Menu;
-import android.view.View;
 
 public class SKActivity extends Activity implements LocationListener {
 	private org.osmdroid.views.MapView map;
 	private IMapController controller;
 	private LocationManager locationManager;
 	private MyItemizedOverlay myItemizedOverlay = null;
-	private boolean Safer = false;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -105,9 +103,7 @@ public class SKActivity extends Activity implements LocationListener {
 	public void onLocationChanged(Location pGeoLocation) {
 		GeoPoint overlocGeoPoint = new GeoPoint(pGeoLocation.getLatitude(), pGeoLocation.getLongitude());
 		controller.setCenter(overlocGeoPoint);
-		if(Safer){
-			myItemizedOverlay.addItem(overlocGeoPoint, "onLocationChanged", "onLocationChanged");
-		}
+		myItemizedOverlay.addItem(overlocGeoPoint, "onLocationChanged", "onLocationChanged");
 	}
 
 	@Override
@@ -126,8 +122,5 @@ public class SKActivity extends Activity implements LocationListener {
 	public void onStatusChanged(String provider, int status, Bundle extras) {
 		// TODO Auto-generated method stub
 		
-	}
-	public void addMomLocation(View v){
-		Safer = true;
 	}
 }

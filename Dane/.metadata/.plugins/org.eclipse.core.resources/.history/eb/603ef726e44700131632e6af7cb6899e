@@ -105,9 +105,7 @@ public class SKActivity extends Activity implements LocationListener {
 	public void onLocationChanged(Location pGeoLocation) {
 		GeoPoint overlocGeoPoint = new GeoPoint(pGeoLocation.getLatitude(), pGeoLocation.getLongitude());
 		controller.setCenter(overlocGeoPoint);
-		if(Safer){
-			myItemizedOverlay.addItem(overlocGeoPoint, "onLocationChanged", "onLocationChanged");
-		}
+		myItemizedOverlay.addItem(overlocGeoPoint, "onLocationChanged", "onLocationChanged");
 	}
 
 	@Override
@@ -128,6 +126,6 @@ public class SKActivity extends Activity implements LocationListener {
 		
 	}
 	public void addMomLocation(View v){
-		Safer = true;
+		
 	}
 }

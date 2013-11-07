@@ -15,7 +15,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:text="@string/clickButtonForAddingCoordinate"
-        android:onClick="addMomLocation"/>
+        android:text="@string/clickButtonForAddingCoordinate" />
 
 </RelativeLayout>

@@ -7,5 +7,6 @@
 <fullyQualifiedTypeName name="android.content.DialogInterface.OnClickListener"/>
 <fullyQualifiedTypeName name="android.app.AlertDialog"/>
 <fullyQualifiedTypeName name="android.location.LocationManager"/>
+<fullyQualifiedTypeName name="org.osmdroid.util.GeoPoint"/>
 <fullyQualifiedTypeName name="org.osmdroid.api.IGeoPoint"/>
 </qualifiedTypeNameHistroy>

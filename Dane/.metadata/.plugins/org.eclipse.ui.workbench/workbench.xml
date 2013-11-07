@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="19" version="2.0">
+<workbench progressCount="24" version="2.0">
 <workbenchAdvisor/>
-<window height="768" maximized="true" width="1024" x="0" y="24">
+<window height="768" maximized="true" width="1020" x="0" y="24">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="160"/>
@@ -20,6 +20,7 @@
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="232" y="30"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="com.android.ide.eclipse.editors.CommonXmlEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
@@ -31,13 +32,30 @@
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
 <editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SKActivity.java" partName="SKActivity.java" path="/home/crydeb/Documents/HSR/HSR/Dane/Schatzkarte/src/ch/wicki/schatzkarte/SKActivity.java" title="SKActivity.java" tooltip="Schatzkarte/src/ch/wicki/schatzkarte/SKActivity.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Schatzkarte/src/ch/wicki/schatzkarte/SKActivity.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3566" selectionTopPixel="1178"/>
+<editorState selectionHorizontalPixel="0" selectionLength="1" selectionOffset="3498" selectionTopPixel="935"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MyItemizedOverlay.java" partName="MyItemizedOverlay.java" path="/home/crydeb/Documents/HSR/HSR/Dane/Schatzkarte/src/ch/wicki/schatzkarte/MyItemizedOverlay.java" title="MyItemizedOverlay.java" tooltip="Schatzkarte/src/ch/wicki/schatzkarte/MyItemizedOverlay.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Schatzkarte/src/ch/wicki/schatzkarte/MyItemizedOverlay.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="61" selectionTopPixel="68"/>
+</editor>
+<editor id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" partName="Schatzkarte Manifest" path="/home/crydeb/Documents/HSR/HSR/Dane/Schatzkarte/AndroidManifest.xml" title="Schatzkarte Manifest" tooltip="Schatzkarte/AndroidManifest.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Schatzkarte/AndroidManifest.xml"/>
+</editor>
+<editor id="com.android.ide.eclipse.editors.CommonXmlEditor" name="activity_sk.xml" partName="activity_sk.xml" path="/home/crydeb/Documents/HSR/HSR/Dane/Schatzkarte/res/layout/activity_sk.xml" title="activity_sk.xml" tooltip="Schatzkarte/res/layout/activity_sk.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Schatzkarte/res/layout/activity_sk.xml"/>
+</editor>
+<editor id="com.android.ide.eclipse.editors.CommonXmlEditor" name="strings.xml" partName="strings.xml" path="/home/crydeb/Documents/HSR/HSR/Dane/Schatzkarte/res/values/strings.xml" title="strings.xml" tooltip="Schatzkarte/res/values/strings.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Schatzkarte/res/values/strings.xml"/>
 </editor>
 </editors>
 <views>
@@ -159,37 +177,11 @@
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Schatzkarte/src/ch/wicki/schatzkarte/SKActivity.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" path="/Schatzkarte/AndroidManifest.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Schatzkarte/src/ch/wicki/schatzkarte/MyItemizedOverlay.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" path="/Schatzkarte/AndroidManifest.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/Schatzkarte/res/layout/activity_sk.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/Schatzkarte/res/values/strings.xml"/>
 </editors>
-<item historyLabel="SKActivity.java" index="0">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="SKActivity.java" index="0">
-<position/>
-</item>
-<item historyLabel="SKActivity.java" index="0">
-<position info="not_deleted" x="1453" y="0"/>
-</item>
-<item historyLabel="SKActivity.java" index="0">
-<position info="not_deleted" x="1501" y="0"/>
-</item>
-<item historyLabel="SKActivity.java" index="0">
-<position info="not_deleted" x="1571" y="0"/>
-</item>
-<item historyLabel="SKActivity.java" index="0">
-<position info="not_deleted" x="1572" y="0"/>
-</item>
-<item historyLabel="SKActivity.java" index="0">
-<position info="not_deleted" x="2901" y="0"/>
-</item>
-<item historyLabel="SKActivity.java" index="0">
-<position info="not_deleted" x="2983" y="0"/>
-</item>
-<item historyLabel="SKActivity.java" index="0">
-<position/>
-</item>
-<item historyLabel="SKActivity.java" index="0">
-<position info="not_deleted" x="3126" y="0"/>
-</item>
 <item historyLabel="SKActivity.java" index="0">
 <position info="not_deleted" x="3176" y="0"/>
 </item>
@@ -239,8 +231,74 @@
 <item historyLabel="SKActivity.java" index="0">
 <position info="not_deleted" x="3443" y="0"/>
 </item>
-<item active="true" historyLabel="SKActivity.java" index="0">
+<item historyLabel="SKActivity.java" index="0">
 <position info="not_deleted" x="3466" y="0"/>
+</item>
+<item historyLabel="SKActivity.java" index="0">
+<position info="not_deleted" x="4121" y="0"/>
+</item>
+<item historyLabel="MyItemizedOverlay.java" index="2">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="MyItemizedOverlay.java" index="2">
+<position info="not_deleted" x="61" y="0"/>
+</item>
+<item historyLabel="SKActivity.java" index="0">
+<position info="not_deleted" x="4121" y="0"/>
+</item>
+<item historyLabel="SKActivity.java" index="0">
+<position info="not_deleted" x="4762" y="0"/>
+</item>
+<item historyLabel="SKActivity.java" index="0">
+<position info="not_deleted" x="4764" y="19"/>
+</item>
+<item historyLabel="SKActivity.java" index="0">
+<position info="not_deleted" x="4495" y="0"/>
+</item>
+<item historyLabel="Schatzkarte Manifest" index="3"/>
+<item historyLabel="activity_sk.xml" index="4">
+<position info="not_deleted" x="766" y="0"/>
+</item>
+<item historyLabel="strings.xml" index="5"/>
+<item historyLabel="activity_sk.xml" index="4"/>
+<item historyLabel="Schatzkarte Manifest" index="3"/>
+<item historyLabel="strings.xml" index="5"/>
+<item historyLabel="activity_sk.xml" index="4"/>
+<item historyLabel="MyItemizedOverlay.java" index="2">
+<position info="not_deleted" x="61" y="0"/>
+</item>
+<item historyLabel="Schatzkarte Manifest" index="3"/>
+<item historyLabel="activity_sk.xml" index="4"/>
+<item historyLabel="MyItemizedOverlay.java" index="2">
+<position info="not_deleted" x="61" y="0"/>
+</item>
+<item historyLabel="SKActivity.java" index="0">
+<position info="not_deleted" x="4341" y="0"/>
+</item>
+<item historyLabel="activity_sk.xml" index="4">
+<position info="not_deleted" x="414" y="352"/>
+</item>
+<item historyLabel="strings.xml" index="5"/>
+<item historyLabel="activity_sk.xml" index="4"/>
+<item historyLabel="Schatzkarte Manifest" index="3"/>
+<item historyLabel="strings.xml" index="5"/>
+<item historyLabel="activity_sk.xml" index="4"/>
+<item historyLabel="SKActivity.java" index="0">
+<position info="not_deleted" x="4341" y="0"/>
+</item>
+<item historyLabel="SKActivity.java" index="0">
+<position info="not_deleted" x="5207" y="0"/>
+</item>
+<item historyLabel="activity_sk.xml" index="4"/>
+<item historyLabel="SKActivity.java" index="0">
+<position info="not_deleted" x="5168" y="14"/>
+</item>
+<item historyLabel="activity_sk.xml" index="4"/>
+<item historyLabel="SKActivity.java" index="0">
+<position info="not_deleted" x="5168" y="14"/>
+</item>
+<item active="true" historyLabel="SKActivity.java" index="0">
+<position info="not_deleted" x="4715" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -259,8 +317,17 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="strings.xml" tooltip="Schatzkarte/res/values/strings.xml">
+<persistable path="/Schatzkarte/res/values/strings.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="activity_sk.xml" tooltip="Schatzkarte/res/layout/activity_sk.xml">
+<persistable path="/Schatzkarte/res/layout/activity_sk.xml"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" tooltip="Schatzkarte/AndroidManifest.xml">
 <persistable path="/Schatzkarte/AndroidManifest.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MyItemizedOverlay.java" tooltip="Schatzkarte/src/ch/wicki/schatzkarte/MyItemizedOverlay.java">
+<persistable path="/Schatzkarte/src/ch/wicki/schatzkarte/MyItemizedOverlay.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SKActivity.java" tooltip="Schatzkarte/src/ch/wicki/schatzkarte/SKActivity.java">
 <persistable path="/Schatzkarte/src/ch/wicki/schatzkarte/SKActivity.java"/>

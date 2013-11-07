@@ -25,7 +25,7 @@ public final class R {
     }
     public static final class id {
         public static final int MapShower=0x7f080000;
-        public static final int clickButtonForAddingKoordinate=0x7f080001;
+        public static final int clickButtonForAddingCoordinate=0x7f080001;
     }
     public static final class layout {
         public static final int activity_sk=0x7f030000;
@@ -36,7 +36,7 @@ public final class R {
     public static final class string {
         public static final int action_settings=0x7f050001;
         public static final int app_name=0x7f050000;
-        public static final int locOnOffButtonText=0x7f050002;
+        public static final int clickButtonForAddingCoordinate=0x7f050002;
     }
     public static final class style {
         /** 
