@@ -1,0 +1,134 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".StartActivityGM" >
+
+    <ImageView
+        android:id="@+id/descriptionPicture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:contentDescription="@string/image_view_description"
+        android:src="@drawable/groessenmesser" />
+
+    <TextView
+        android:id="@+id/TextAlpha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/descriptionPicture"
+        android:layout_below="@+id/descriptionPicture"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/text_a"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/inputNumberLineA"
+        android:inputType="numberDecimal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/TextAlpha"
+        android:layout_alignBottom="@+id/TextAlpha"
+        android:layout_alignRight="@+id/descriptionPicture"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@+id/TextAlpha"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/TextBeta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/TextAlpha"
+        android:layout_below="@+id/inputNumberLineA"
+        android:layout_marginTop="20dp"
+        android:text="@string/text_beta"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/ButtonStartPictureActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/TextBeta"
+        android:layout_alignBottom="@+id/TextBeta"
+        android:layout_alignRight="@+id/inputNumberLineA"
+        android:onClick="openCameraIntent"
+        android:text="@string/get_data" />
+
+    <Button
+        android:id="@+id/calculateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/TextViewHeight"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/heightsolution"
+        android:layout_marginBottom="28dp"
+        android:text="@string/calculate_text"
+        android:onClick="onClickCalculateButton" />
+
+    <EditText
+        android:id="@+id/editTextAfterGetIt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/TextBeta"
+        android:layout_alignBottom="@+id/TextBeta"
+        android:layout_alignLeft="@+id/inputNumberLineA"
+        android:layout_toLeftOf="@+id/ButtonStartPictureActivity"
+        android:ems="10"
+        android:enabled="false"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/TextViewAlpha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_alignRight="@+id/TextBeta"
+        android:layout_below="@+id/editTextAfterGetIt"
+        android:text="@string/text_alpha"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/EditTextAlpha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/TextViewAlpha"
+        android:layout_alignBottom="@+id/TextViewAlpha"
+        android:layout_alignLeft="@+id/editTextAfterGetIt"
+        android:layout_alignRight="@+id/ButtonStartPictureActivity"
+        android:ems="10"
+        android:enabled="false"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/TextViewHeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/TextViewAlpha"
+        android:layout_below="@+id/EditTextAlpha"
+        android:layout_marginTop="40dp"
+        android:text="@string/text_b_height"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/heightsolution"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/TextViewHeight"
+        android:layout_alignBottom="@+id/TextViewHeight"
+        android:layout_alignLeft="@+id/EditTextAlpha"
+        android:layout_alignRight="@+id/EditTextAlpha"
+        android:ems="10"
+        android:enabled="false"
+        android:inputType="number" />
+
+</RelativeLayout>

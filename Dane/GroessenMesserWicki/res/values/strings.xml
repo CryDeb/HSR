@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">GroessenMesser</string>
+    <string name="action_settings">Settings</string>
+    <string name="image_view_description">Description what this app will calculate</string>
+    <string name="text_alpha">α</string>
+    <string name="get_data">Get data</string>
+    <string name="text_beta">β</string>
+    <string name="text_a">a</string>
+    <string name="text_b_height">b</string>
+    <string name="calculate_text">Calculate</string>
+    <string name="title_activity_picture">PictureActivity</string>
+
+</resources>
