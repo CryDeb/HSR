@@ -13,6 +13,7 @@ import android.graphics.drawable.Drawable;
 
 public class MyItemizedOverlay extends ItemizedOverlay<OverlayItem> {
 	private ArrayList<OverlayItem> overlayItemList = new ArrayList<OverlayItem>();
+	private boolean first = true;
 	 public MyItemizedOverlay(Drawable pDefaultMarker, ResourceProxy pResourceProxy) {
 		  super(pDefaultMarker, pResourceProxy);
 		  // TODO Auto-generated constructor stub
@@ -20,8 +21,25 @@ public class MyItemizedOverlay extends ItemizedOverlay<OverlayItem> {
 		  
 		 public void addItem(GeoPoint p, String title, String snippet){
 		  OverlayItem newItem = new OverlayItem(title, snippet, p);
-		  overlayItemList.add(newItem);
+		  if(!first){
+			  if(!(newItem.equals(overlayItemList.get(overlayItemList.size()-1)))){
+				  overlayItemList.add(newItem);			  
+			  }
+		  }else{
+			  overlayItemList.add(newItem);		
+			  first = false;
+		  }
 		  populate();
+		 }
+		 
+		 public void setHomeLocation(GeoPoint p, String title, String snippet){
+			 if(overlayItemList.size() > 0){
+				 overlayItemList.remove(0);
+				 OverlayItem ovlitm = new OverlayItem(title, snippet, p);
+				 overlayItemList.add(0, ovlitm);
+			 }else{
+				 this.addItem(p, title, snippet);
+			 }
 		 }
 		 
 		 @Override
@@ -36,6 +54,6 @@ public class MyItemizedOverlay extends ItemizedOverlay<OverlayItem> {
 		 
 		 @Override
 		 public int size() {
-		  return overlayItemList.size();
+			 return overlayItemList.size();
 		 }
 }
