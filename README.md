@@ -2,4 +2,4 @@ This repo will have different application (Android Apps) for the HSR App Data Qu
 All apps are created with the Eclipse (Android ADT).
 
 
-created by Dane Wicki
+created by CryDeb
